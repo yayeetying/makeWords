@@ -60,9 +60,10 @@ public class MakeWords {
 
   public static void main(String[] args) {
     //printAllWords(3);
-    char[] churs = new char[]{'a','b','c'};
+    char[] churs = new char[]{'a','b','c','d','e','f','g','h'};
     printNoDoubleLetterWords(3,churs);
     printNoDoubleLetterWords(2,churs);
+    printNoDoubleLetterWords(churs.length,churs);
 
   }
 
