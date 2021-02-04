@@ -55,7 +55,7 @@ print all words made of n letters
     //printBinary(3);
     // char[] lotsaChars = new char[]{'a','b','c','d','e'};
     // printWords(3, "", lotsaChars);
-
+    printAllWords(3);
   }
 
 }
