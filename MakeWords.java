@@ -32,9 +32,7 @@ public class MakeWords {
 
   /*Print all words that are made of the characters in letters. There may not be consecutive equal letters,
   *aax is not allowed, but axa is allowed.
-  *@param length : either how many more letters need to be
   *@param word   : the partial word so far.
-  *@param letters: the letters you should be using
   */
   public static void printNoDoubleLetterWords(int length,String word,char[]letters){
     if (length == 0) { //decrement int length
@@ -44,12 +42,6 @@ public class MakeWords {
       for (char c : letters) {
         if (word.length() >= 1 && c == word.charAt(word.length()-1)) { //short circuiting<3
           //Do nothing!! just let method end w/o calling itself
-
-          // char[] breaker = new char[0];
-          // printNoDoubleLetterWords(length, word, breaker);
-
-          //System.out.println(word + " adjacent");
-          //printNoDoubleLetterWords(length, word+Character.toString(letters[c++]), letters);
         }
         else { //the magic of else T_T
           printNoDoubleLetterWords(length-1, word+Character.toString(c), letters);
