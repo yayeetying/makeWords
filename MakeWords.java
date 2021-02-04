@@ -37,15 +37,23 @@ public class MakeWords {
   *@param letters: the letters you should be using
   */
   public static void printNoDoubleLetterWords(int length,String word,char[]letters){
-    if (word.length() == length) {
+    if (length == 0) { //decrement int length
       System.out.println(word);
     }
     else {
       for (char c : letters) {
         if (word.length() >= 1 && c == word.charAt(word.length()-1)) { //short circuiting<3
+          //Do nothing!! just let method end w/o calling itself
 
+          // char[] breaker = new char[0];
+          // printNoDoubleLetterWords(length, word, breaker);
+
+          //System.out.println(word + " adjacent");
+          //printNoDoubleLetterWords(length, word+Character.toString(letters[c++]), letters);
         }
-        printNoDoubleLetterWords(length, word+Character.toString(c), letters);
+        else { //the magic of else T_T
+          printNoDoubleLetterWords(length-1, word+Character.toString(c), letters);
+        }
       }
     }
   }
@@ -54,6 +62,8 @@ public class MakeWords {
     //printAllWords(3);
     char[] churs = new char[]{'a','b','c'};
     printNoDoubleLetterWords(3,churs);
+    printNoDoubleLetterWords(2,churs);
+
   }
 
 }
