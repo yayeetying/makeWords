@@ -41,12 +41,19 @@ public class MakeWords {
       System.out.println(word);
     }
     else {
-      
+      for (char c : letters) {
+        if (word.length() >= 1 && c == word.charAt(word.length()-1)) { //short circuiting<3
+
+        }
+        printNoDoubleLetterWords(length, word+Character.toString(c), letters);
+      }
     }
   }
 
   public static void main(String[] args) {
-    printAllWords(3);
+    //printAllWords(3);
+    char[] churs = new char[]{'a','b','c'};
+    printNoDoubleLetterWords(3,churs);
   }
 
 }
